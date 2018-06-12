@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DearManager.Custom"
+             x:Class="DearManager.View.ProfilePage">
+    <RelativeLayout x:Name="relativeLayout">
+        <Image Source="image_default_cover.jpg"
+                 Aspect="AspectFill"
+                 RelativeLayout.WidthConstraint=
+                 "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1,
+            Constant=0}" 
+                 RelativeLayout.HeightConstraint=
+                 "{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3,
+            Constant=0}"/>
+        <local:CircleImage Aspect="AspectFill"
+                           WidthRequest="100" HeightRequest="100"
+                           x:Name="profileImage"
+                RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3,
+            Constant=-50}"
+                 RelativeLayout.XConstraint=
+                 "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.5,
+            Constant=-50}" >
+            <local:CircleImage.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTap" NumberOfTapsRequired="1" />
+            </local:CircleImage.GestureRecognizers>
+        </local:CircleImage>
+        <Label Text="{Binding UserName}" x:Name="UserName" FontAttributes="Bold" FontSize="30" TextColor="#000000"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+            ElementName=profileImage,
+            Property=Y,
+            Factor=1,
+            Constant=110}"
+               RelativeLayout.WidthConstraint=
+               "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}"
+               HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding UserNickName, StringFormat='({0})'}" x:Name="UserNickName" FontSize="22" TextColor="#191919"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+            ElementName=UserName,
+            Property=Y,
+            Factor=1,
+            Constant=50}"
+               RelativeLayout.WidthConstraint=
+               "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}"
+               HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding UserId, StringFormat='ID: {0}'}" x:Name="Userid" TextColor="#7F7F7F" Margin="0,0,24,0"
+               FontAttributes="Bold" FontSize="17"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+            ElementName=UserNickName,
+            Property=Y,
+            Factor=1,
+            Constant=60}"
+               RelativeLayout.WidthConstraint=
+               "{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}"
+               HorizontalTextAlignment="End"/>
+    </RelativeLayout>
+</ContentPage>

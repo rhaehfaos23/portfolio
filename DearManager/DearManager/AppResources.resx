@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtAddGroupFriendAddButton" xml:space="preserve">
+    <value>Add Friends</value>
+  </data>
+  <data name="txtAddGroupFriendTitle" xml:space="preserve">
+    <value>Friends of Group</value>
+  </data>
+  <data name="txtAddGroupName" xml:space="preserve">
+    <value>Group Name</value>
+  </data>
+  <data name="txtAddGroupNameSample" xml:space="preserve">
+    <value>My Group</value>
+  </data>
+  <data name="txtAddGroupNameTitle" xml:space="preserve">
+    <value>Setting Group Name</value>
+  </data>
+  <data name="txtAddGroupTitle" xml:space="preserve">
+    <value>Add Group</value>
+  </data>
+  <data name="txtButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="txtButtonOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="txtMainFriends" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="txtMainGroup" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="txtMainProfile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="txtAddGroupReceiptAmountLabel" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="txtAddGroupReceiptAmountPlaceholder" xml:space="preserve">
+    <value>Enter Total Amount</value>
+  </data>
+  <data name="txtAddGroupReceiptAmountTitle" xml:space="preserve">
+    <value>Enter Total Amount</value>
+  </data>
+  <data name="txtAddGroupReceiptMember" xml:space="preserve">
+    <value>Friends List</value>
+  </data>
+  <data name="txtAddGroupReceiptMemberAddButton" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="txtAddGroupReceiptMemberDutchButton" xml:space="preserve">
+    <value>Dutch Treat</value>
+  </data>
+  <data name="txtAddGroupReceiptTagLabel" xml:space="preserve">
+    <value>Name of Receipt</value>
+  </data>
+  <data name="txtAddGroupReceiptTagPlaceholder" xml:space="preserve">
+    <value>New Receipt</value>
+  </data>
+  <data name="txtAddGroupReceiptTagTitle" xml:space="preserve">
+    <value>Add New Receipt Name</value>
+  </data>
+  <data name="appName" xml:space="preserve">
+    <value>DearManager</value>
+  </data>
+  <data name="txtCustomFriendRequestCommit" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="txtCustomFriendRequestReject" xml:space="preserve">
+    <value>Deny</value>
+  </data>
+  <data name="txtFriendsPageAddButton" xml:space="preserve">
+    <value>Add Friend</value>
+  </data>
+  <data name="txtFriendsPageRequestCheck" xml:space="preserve">
+    <value>Friend Request (Wait: 0)</value>
+  </data>
+  <data name="txtFriendsPageRequestCheckAfter" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="txtFriendsPageRequestCheckBefore" xml:space="preserve">
+    <value>Friend Request (Wait: </value>
+  </data>
+  <data name="txtFriendsPageTitle" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="txtGroupReceiptPageMember" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="txtGroupReceiptPageMore" xml:space="preserve">
+    <value> See More</value>
+  </data>
+  <data name="txtGroupReceiptPageReceipt" xml:space="preserve">
+    <value>Receipts</value>
+  </data>
+  <data name="txtGroupReceiptPageTitleAddButton" xml:space="preserve">
+    <value>Add Receipt</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMBlankCaption" xml:space="preserve">
+    <value>There is blank form(s). Please check once again.</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMBlankMoneyCaption" xml:space="preserve">
+    <value>There is blank money form(s). Please check once again.</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMBlankMoneyTitle" xml:space="preserve">
+    <value>Found Blank Money</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMBlankTitle" xml:space="preserve">
+    <value>Found Blank</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMDividedZeroCaption" xml:space="preserve">
+    <value>You can't divide by 0.</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMDividedZeroTitle" xml:space="preserve">
+    <value>Divided by 0</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMMoneyPlaceholder" xml:space="preserve">
+    <value>Input Money</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMPriceErrorCaption" xml:space="preserve">
+    <value>Sum of member's money is not same with the whole money. Is it OK?</value>
+  </data>
+  <data name="txtAddGroupReceiptPageVMPriceErrorTitle" xml:space="preserve">
+    <value>Money Equality Error</value>
+  </data>
+  <data name="txtGroupsPageAddButton" xml:space="preserve">
+    <value>Add Group</value>
+  </data>
+  <data name="txtGroupsPageTitle" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="txtInputUserPageCaption" xml:space="preserve">
+    <value>For using application, Please input your name and nickname.
+
+Your Nickname can't be duplicated.</value>
+  </data>
+  <data name="txtInputUserPageNameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtInputUserPageNamePlaceholder" xml:space="preserve">
+    <value>Please input your name</value>
+  </data>
+  <data name="txtInputUserPageNicknameLabel" xml:space="preserve">
+    <value>Nickname (Everyone can see)</value>
+  </data>
+  <data name="txtInputUserPageNicknamePlaceholder" xml:space="preserve">
+    <value>Please input your nickname</value>
+  </data>
+  <data name="txtInputUserPageOKButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="txtInputUserPageTitle" xml:space="preserve">
+    <value>Thanks for using 'DearManager'!</value>
+  </data>
+  <data name="txtProfilePageDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="txtProfilePageDialogChangePhoto" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="txtProfilePageDialogRemovePhoto" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="txtProfilePageDialogShowBigPhoto" xml:space="preserve">
+    <value>Show Big Photo</value>
+  </data>
+  <data name="txtProfilePageDialogTitle" xml:space="preserve">
+    <value>Profile Photo</value>
+  </data>
+  <data name="txtProfilePageFriendRemoveButton" xml:space="preserve">
+    <value>Delete Friends</value>
+  </data>
+  <data name="txtProfilePageProfileTitleUnit" xml:space="preserve">
+    <value>'s Profile</value>
+  </data>
+  <data name="txtProfilePicturePageTitle" xml:space="preserve">
+    <value>Profile Photo (Big)</value>
+  </data>
+  <data name="txtRepaymentPageAllRepaymentLabel" xml:space="preserve">
+    <value>All:</value>
+  </data>
+  <data name="txtRepaymentPageAllRepaymentPlaceholder" xml:space="preserve">
+    <value>Money of All Repayment</value>
+  </data>
+  <data name="txtRepaymentPageCancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="txtRepaymentPageOKButton" xml:space="preserve">
+    <value>Repayment</value>
+  </data>
+  <data name="txtRepaymentPagePartRepaymentLabel" xml:space="preserve">
+    <value>Partitial:</value>
+  </data>
+  <data name="txtRepaymentPagePartRepaymentPlaceholder" xml:space="preserve">
+    <value>Money of Partitial Repayment</value>
+  </data>
+  <data name="txtRepaymentPageQuestion" xml:space="preserve">
+    <value>Will you change balance of {0}?</value>
+  </data>
+  <data name="txtSearchFriendPageCaptionLabel" xml:space="preserve">
+    <value>Please input ID of friend.</value>
+  </data>
+  <data name="txtSearchFriendPageIDLabel" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="txtSearchFriendPageIDPlaceholder" xml:space="preserve">
+    <value>Please Input Your ID</value>
+  </data>
+  <data name="txtSearchFriendPageLabel" xml:space="preserve">
+    <value>Add Friend</value>
+  </data>
+  <data name="txtButtonNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="txtButtonYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="txtGroupReceiptPageVMAdminCaption" xml:space="preserve">
+    <value>You are not the administrator(s) of this group.</value>
+  </data>
+  <data name="txtGroupReceiptPageVMAdminTitle" xml:space="preserve">
+    <value>Authority Error</value>
+  </data>
+  <data name="txtInputUserVMBlankCaption" xml:space="preserve">
+    <value>There are some blanks.</value>
+  </data>
+  <data name="txtInputUserVMBlankTitle" xml:space="preserve">
+    <value>Blanks</value>
+  </data>
+  <data name="txtInputUserVMDuplicatedCaption" xml:space="preserve">
+    <value>There is duplicated nickname.</value>
+  </data>
+  <data name="txtInputUserVMDuplicatedTitle" xml:space="preserve">
+    <value>Duplicated Nickname</value>
+  </data>
+  <data name="txtProfileVMDialogCaption" xml:space="preserve">
+    <value>Are you sure to delete friend?</value>
+  </data>
+  <data name="txtProfileVMDialogNoButton" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="txtProfileVMDialogTitle" xml:space="preserve">
+    <value>Confirm Remove Friend</value>
+  </data>
+  <data name="txtProfileVMDialogYesButton" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="txtRepaymentPageVMConfirmCaption" xml:space="preserve">
+    <value>is a repaid money.
+Is it right?</value>
+  </data>
+  <data name="txtRepaymentPageVMConfirmTitle" xml:space="preserve">
+    <value>Confirm Repayment</value>
+  </data>
+  <data name="txtRepaymentPageVMNoMoneyCaption" xml:space="preserve">
+    <value>Money label is blank.</value>
+  </data>
+  <data name="txtRepaymentPageVMNoMoneyTitle" xml:space="preserve">
+    <value>Blank Money</value>
+  </data>
+  <data name="txtRepaymentPageVMOverCaption" xml:space="preserve">
+    <value>Written money is more bigger than the balance. Is it OK?</value>
+  </data>
+  <data name="txtRepaymentPageVMOverTitle" xml:space="preserve">
+    <value>Please Check</value>
+  </data>
+  <data name="txtRepaymentPageVMRepaymentText" xml:space="preserve">
+    <value>Repayment</value>
+  </data>
+  <data name="txtSearchFriendVMAlreadyCaption" xml:space="preserve">
+    <value>You already have this friend on your friends list.</value>
+  </data>
+  <data name="txtSearchFriendVMCheckCaption1" xml:space="preserve">
+    <value>Is your friend's name </value>
+  </data>
+  <data name="txtSearchFriendVMCheckCaption2" xml:space="preserve">
+    <value> right?</value>
+  </data>
+  <data name="txtSearchFriendVMCheckTitle" xml:space="preserve">
+    <value>Check Friend Request</value>
+  </data>
+  <data name="txtSearchFriendVMErrorTitle" xml:space="preserve">
+    <value>Fail To Add Friend</value>
+  </data>
+  <data name="txtSearchFriendVMInputCaption" xml:space="preserve">
+    <value>ID is made up with numbers. Please check once again.</value>
+  </data>
+  <data name="txtSearchFriendVMInputTitle" xml:space="preserve">
+    <value>Value Error</value>
+  </data>
+  <data name="txtSearchFriendVMMeCaption" xml:space="preserve">
+    <value>You can't add you in your friends even you are so lonely. (HAHA JK)</value>
+  </data>
+  <data name="txtSearchFriendVMSuccessCaption" xml:space="preserve">
+    <value>Friend request is succeed. Please wait to confirm your friend.</value>
+  </data>
+  <data name="txtSearchFriendVMSuccessTitle" xml:space="preserve">
+    <value>Success Request</value>
+  </data>
+  <data name="txtSearchFriendVMWrongCaption" xml:space="preserve">
+    <value>There is no such ID.</value>
+  </data>
+</root>

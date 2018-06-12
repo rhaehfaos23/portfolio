@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DearManager.Custom.FriendsCell">
+    <StackLayout Padding="13, 4" Orientation="Horizontal">
+        <Image x:Name="CheckedImage" HorizontalOptions="Start" />
+        <Label x:Name="lblName" Style="{StaticResource accentText}" Text = "{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+               FontAttributes="Bold" FontSize="Medium"/>
+    </StackLayout>
+</ViewCell>

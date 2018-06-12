@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DearManager.View.GroupReceiptPage"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             xmlns:local="clr-namespace:DearManager.Custom">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_add_receipt.png" Text="{i18n:Translate txtGroupReceiptPageTitleAddButton}" Command="{Binding CGoAddGroupReceiptPage}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="1000" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Button Text="{i18n:Translate txtGroupReceiptPageMember}" 
+                            Image="ic_folding_menu_downside.png"
+                            Style="{StaticResource ButtonStyle}"
+                            Clicked="OnClickMemberBtn"/>
+                    <ListView HeightRequest="{Binding MemberHeight}" 
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand"
+                        SelectedItem="{Binding SelectedBalanceInfo, Mode=TwoWay}"
+                        ItemTapped="GoRepaymentPage"
+                        ItemsSource="{Binding BalanceInfos}"
+                        RowHeight="{Binding MemberRowHeight}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal"
+                                                 Padding="13, 3">
+                                        <local:CircleImage Source="{Binding ProfileImage}"
+                                                           HeightRequest="40" 
+                                                           WidthRequest="40"
+                                                           HorizontalOptions="Start"
+                                                           VerticalOptions="Center"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <Label Text="{Binding NickName}" 
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   TextColor="Black"
+                                                   FontAttributes="Bold"
+                                                   FontSize="Large"/>
+                                            <Label Text="{Binding Balance, StringFormat='{0:C}'}"
+                                                   LineBreakMode="NoWrap"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="End"
+                                                   FontSize="Large"
+                                                   TextColor="Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Button Text="{i18n:Translate txtGroupReceiptPageReceipt}" 
+                            Image="ic_folding_menu_downside.png"
+                            Style="{StaticResource ButtonStyle}" 
+                            Clicked="OnClickDetailBtn"/>
+                    <ListView VerticalOptions="Start"
+                              HeightRequest="{Binding DetailHeight}"
+                              ItemsSource="{Binding ReceiptGroups}"
+                              IsGroupingEnabled="True"
+                              GroupDisplayBinding="{Binding TagTitle}"
+                              RowHeight="{Binding DetailRowHeight}"
+                              IsEnabled="False"
+                              HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="30">//높이 수정시 ViewModel에 있는 DetailRowHeight도 같이 수정해주세요
+                                    <StackLayout Orientation="Horizontal" Padding="26, 3">
+                                        <Label Text="{Binding PersonNickName}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="Center"/>
+                                        <Label Text="{Binding Money, StringFormat='{0:C}'}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="End"
+                                                VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="30"> //높이 수정시 ViewModel에 있는 DetailHeaderHeight도 같이 수정해주세요
+                                    <StackLayout Orientation="Horizontal" Padding="13, 3" Style="{StaticResource accentGroupTemplate}">
+                                        <Label Text="{Binding TagTitle}" FontAttributes="Bold" TextColor="White" FontSize="Medium" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Date, StringFormat=' ({0:yyyy-MM-dd HH:mm})'}" TextColor="White" FontSize="Small" VerticalOptions="Center" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.GroupHeaderTemplate>
+                    </ListView>
+                    <Button HorizontalOptions="Center" Image="ic_more.png" Text="{i18n:Translate txtGroupReceiptPageMore}" BackgroundColor="Transparent" Command="{Binding CAppendReceipts}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="DearManager.View.TutorialPage"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 HasSystemPadding="True">
+    <pages:PopupPage.Resources>
+        <OnPlatform x:Key="osFactorLocation"
+            x:TypeArguments="x:Double"
+                      iOS="0.65"
+                      Android="0.12" />
+    </pages:PopupPage.Resources>
+    <RelativeLayout x:Name="tutorialLayout" >
+        <RelativeLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="OnTapGestureRecognizerTapped"
+                NumberOfTapsRequired="1" />
+        </RelativeLayout.GestureRecognizers>
+        <Image x:Name="tutorialTop" Source="image_tutorial_main.png" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+               HeightRequest="200"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0,
+            Constant=0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor={StaticResource Key=osFactorLocation},
+            Constant=0}" />
+    </RelativeLayout>
+</pages:PopupPage>

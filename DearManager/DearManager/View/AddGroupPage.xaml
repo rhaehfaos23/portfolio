@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DearManager.Custom"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             x:Class="DearManager.View.AddGroupPage"
+             NavigationPage.HasBackButton="False"
+             Title="{i18n:Translate txtAddGroupTitle}">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="{i18n:Translate txtAddGroupNameTitle}">
+                        <EntryCell Label="{i18n:Translate txtAddGroupName}" Placeholder="{i18n:Translate txtAddGroupNameSample}" Text="{Binding GroupName, Mode=OneWayToSource}"/>
+                    </TableSection>
+                    <TableSection Title="{i18n:Translate txtAddGroupFriendTitle}" x:Name="memberSection">
+                        <ViewCell>
+                            <Button Text="{i18n:Translate txtAddGroupFriendAddButton}" BackgroundColor="Transparent" Command="{Binding CGotoChoiceFriendsPage}" Clicked="SubscribeMessaging"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="{i18n:Translate txtButtonCancel}"
+                        Style="{StaticResource cancelButtonStyle}"
+                        HorizontalOptions="CenterAndExpand"
+                            BackgroundColor="Transparent"
+                    Command="{Binding CCancel}"/>
+                <Button Text="{i18n:Translate txtButtonOK}" 
+                    Style="{StaticResource okButtonStyle}"
+                    HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                    Command="{Binding CCommit}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

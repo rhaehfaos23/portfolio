@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:imgcrop="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.ImageCropView"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="DearManager.View.CropImagePage"
+             Title="프로필 사진 변경">
+    <ContentPage.Content>
+        <RelativeLayout BackgroundColor="#323232">
+            <imgcrop:ImageCropView HeightRequest="330" WidthRequest="330" x:Name="cropView"
+                                   HorizontalOptions="CenterAndExpand"
+                                    Source="{Binding Image, Mode=OneWay}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0,
+            Constant = 0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Height,
+            Factor = 0.15,
+            Constant = 0}">
+                <imgcrop:ImageCropView.PreviewTransformations>
+                    <fftransformations:CircleTransformation />
+                </imgcrop:ImageCropView.PreviewTransformations>
+            </imgcrop:ImageCropView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1}"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0,
+            Constant = 0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Height,
+            Factor = 0.9,
+            Constant = 0}">
+                <Button Text="취소" Style="{StaticResource cancelButtonStyle}" TextColor="White" BackgroundColor="Transparent" Clicked="ImageCancel" />
+                <Button Text="저장" Style="{StaticResource okButtonStyle}" BackgroundColor="Transparent" Clicked="ImageSave" />
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

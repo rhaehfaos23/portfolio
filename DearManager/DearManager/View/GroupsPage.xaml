@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DearManager.View.GroupsPage"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             Title="{i18n:Translate txtGroupsPageTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_add_group.png" Text="{i18n:Translate txtGroupsPageAddButton}" Command="{Binding AddGroups}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <ActivityIndicator
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width,
+                Factor=1,
+                Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height,
+                Factor=1,
+                Constant=0}" 
+                IsVisible="{Binding LoadingVisible}"
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout IsVisible="{Binding ContentVisible}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width,
+                Factor=1,
+                Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height,
+                Factor=1,
+                Constant=0}" >                
+                <SearchBar Text="{Binding SearchText}" TextChanged="Handle_TextChanged" /> 
+                <ListView ItemsSource="{Binding Groups}"
+                          ItemTapped="Handle_ItemSelected"
+                          SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                          x:Name="GroupsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="ic_group_header.png" Margin="12,12,8,12" VerticalOptions="Center" />
+                                    <Label FontAttributes="Bold" Style="{StaticResource accentText}" Text="{Binding Name}" FontSize="Medium" VerticalOptions="Center" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

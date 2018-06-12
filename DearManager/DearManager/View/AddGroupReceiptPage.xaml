@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:DearManager.View"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             x:Class="DearManager.View.AddGroupReceiptPage" >
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form" HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="{i18n:Translate txtAddGroupReceiptTagTitle}">
+                        <EntryCell Label="{i18n:Translate txtAddGroupReceiptTagLabel}" Placeholder="{i18n:Translate txtAddGroupReceiptTagPlaceholder}"
+                                   Text="{Binding Tag, Mode=TwoWay}"/>
+                    </TableSection>
+                    <TableSection Title="{i18n:Translate txtAddGroupReceiptAmountTitle}">
+                        <EntryCell Label="{i18n:Translate txtAddGroupReceiptAmountLabel}" 
+                                   Placeholder="{i18n:Translate txtAddGroupReceiptAmountPlaceholder}"
+                                   Keyboard="Numeric"
+                                   Text="{Binding Amount, Mode=TwoWay}"
+                                   HorizontalTextAlignment="End" />
+                    </TableSection>
+                    <TableSection Title="{i18n:Translate txtAddGroupReceiptMember}" x:Name="memberSection">
+                        <ViewCell>
+                            <Button Text="{i18n:Translate txtAddGroupReceiptMemberAddButton}" BackgroundColor="Transparent" Command="{Binding CGoChoiceFriendsPage}"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="{i18n:Translate txtAddGroupReceiptMemberDutchButton}" 
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        Command="{Binding CLetsDutch}"
+                        CommandParameter="{Binding Source={x:Reference memberSection}, Path=.}"/>
+                <Button Text="{i18n:Translate txtButtonCancel}" HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource cancelButtonStyle}"
+                        BackgroundColor="Transparent"
+                        Command="{Binding CCancel}"/>
+                <Button Text="{i18n:Translate txtButtonOK}" HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource okButtonStyle}"
+                        BackgroundColor="Transparent"
+                        Command="{Binding CCommit}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

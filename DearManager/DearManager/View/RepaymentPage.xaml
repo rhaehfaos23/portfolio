@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="DearManager.View.RepaymentPage"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:local="clr-namespace:DearManager.Custom"
+                 xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+                 HasSystemPadding="True">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <AbsoluteLayout>
+        <BoxView Color="White" 
+                 AbsoluteLayout.LayoutBounds=".5,.5,300,350" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <RelativeLayout AbsoluteLayout.LayoutBounds=".5,.5,300,350" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <local:CircleImage Source="{Binding ProfileImage}" x:Name="profileImage"
+                 WidthRequest="100" 
+                 HeightRequest="100"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                            Property = Width,
+                                            Factor = 0.5,
+                                            Constant = -50}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                Property=Y,
+                                                Factor=0,
+                                                Constant=-50}"/>
+            <Label Text="{Binding UserName, StringFormat={i18n:Translate txtRepaymentPageQuestion}}" HorizontalTextAlignment="Start"
+               LineBreakMode="CharacterWrap"
+               x:Name="MainText"
+               FontSize="Large"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0.1,
+            Constant = 0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.15,
+            Constant=0}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0.8,
+            Constant = 0}" 
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Height,
+            Factor = 0.3,
+            Constant = 0}"/>
+            <StackLayout Orientation="Horizontal"
+                     x:Name="particalRepaymentText"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0,
+            Constant = 0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.45,
+            Constant=0}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1,
+            Constant=0}"
+            HorizontalOptions="Center">
+                <Button Image="{Binding PartitionBtnImg, Mode=TwoWay}" Command="{Binding OnClickPartitionBtn}" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start" />
+                <Label Text="{i18n:Translate txtRepaymentPagePartRepaymentLabel}" FontSize="Medium" VerticalOptions="Center" />
+                <Entry Text="{Binding Repayment, Mode=TwoWay, StringFormat='{0:C}'}" Placeholder="{i18n:Translate txtRepaymentPagePartRepaymentPlaceholder}" Keyboard="Numeric" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                     x:Name="wholeRepaymentText"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0,
+            Constant = 0}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.6,
+            Constant=0}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=1,
+            Constant=0}"
+            HorizontalOptions="Center">
+                <Button Image="{Binding AllBtnImg, Mode=TwoWay}" Command="{Binding OnClickAllBtn}" BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start" />
+                <Label Text="{i18n:Translate txtRepaymentPageAllRepaymentLabel}" FontSize="Medium" VerticalOptions="Center" />
+                <Entry Text="{Binding RemainAmount, Mode=TwoWay, StringFormat='{0:C}'}" Placeholder="{i18n:Translate txtRepaymentPageAllRepaymentPlaceholder}" Keyboard="Numeric" IsEnabled="False" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 1,
+            Constant = -130}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0.85,
+            Constant=0}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,
+            Factor=0.3,
+            Constant=0}"
+            HorizontalOptions="End">
+                <Button Text="{i18n:Translate txtRepaymentPageCancelButton}" 
+                    Style="{StaticResource cancelButtonStyle}"
+                    Command="{Binding OnCancelBtn}"/>
+                <Button Text="{i18n:Translate txtRepaymentPageOKButton}" 
+                    Style="{StaticResource okButtonStyle}"
+                    Command="{Binding OnRepaymentBtn}"/>
+            </StackLayout>
+        </RelativeLayout>
+    </AbsoluteLayout>
+</pages:PopupPage>

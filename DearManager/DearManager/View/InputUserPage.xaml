@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             x:Class="DearManager.View.InputUserPage">
+    <ContentPage.Content>
+        <RelativeLayout
+                 BackgroundColor="#07628C"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 1,
+            Constant = 0}" 
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Height,
+            Factor = 1,
+            Constant = 0}">
+            <StackLayout Orientation="Vertical" 
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 0,
+            Constant = 0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,
+            Factor=0,
+            Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Width,
+            Factor = 1,
+            Constant = 0}" 
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property = Height,
+            Factor = 1,
+            Constant = 0}">
+                <Label Text="{i18n:Translate txtInputUserPageTitle}"
+                       Margin="30"
+                       FontSize="35"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="{i18n:Translate txtInputUserPageCaption}"
+                       Margin="12,0,25,12"
+                       FontSize="Large"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                       Margin="12,0,12,12">
+                    <Label Text="{i18n:Translate txtInputUserPageNameLabel}" FontSize="Small" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry Text="{Binding UserName}" Placeholder="{i18n:Translate txtInputUserPageNamePlaceholder}"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Entry.PlaceholderColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="Black" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Entry.PlaceholderColor>
+                        <Entry.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="Black" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Entry.TextColor>
+                    </Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                       Margin="12,0,25,12">
+                    <Label Text="{i18n:Translate txtInputUserPageNicknameLabel}" TextColor="White" HorizontalOptions="Start" FontSize="Small" />
+                    <Entry Text="{Binding UserNickName}" Placeholder="{i18n:Translate txtInputUserPageNicknamePlaceholder}"
+                           HorizontalOptions="FillAndExpand">
+                        <Entry.PlaceholderColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="Black" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Entry.PlaceholderColor>
+                        <Entry.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="Black" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Entry.TextColor>
+                    </Entry>
+                </StackLayout>
+                <Button Text="{i18n:Translate txtInputUserPageOKButton}" Command="{Binding CCommit}" Style="{StaticResource okButtonStyle}" HorizontalOptions="Center" />
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

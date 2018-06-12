@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DearManager.View.SearchFriendPage"
+             xmlns:i18n="clr-namespace:DearManager;assembly=DearManager"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <StackLayout BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="24, 18"
+                 WidthRequest="300">
+        <Label Text="{i18n:Translate txtSearchFriendPageLabel}" FontAttributes="Bold" FontSize="Large" TextColor="#232F34" />
+        <Label Text="{i18n:Translate txtSearchFriendPageCaptionLabel}" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{i18n:Translate txtSearchFriendPageIDLabel}" 
+                   VerticalOptions="Center"/>
+            <Entry Placeholder="{i18n:Translate txtSearchFriendPageIDPlaceholder}"
+                   Text="{Binding FriendId}"
+                   Completed="FriendSearchStart"
+                   HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <Button Text="{i18n:Translate txtButtonCancel}" Clicked="ClosePage" Style="{StaticResource cancelButtonStyle}" />
+            <Button Text="{i18n:Translate txtButtonOK}" Clicked="FriendSearchStart" Style="{StaticResource okButtonStyle}" />
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

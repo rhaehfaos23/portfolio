@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:DearManager.View"
+            x:Class="DearManager.View.MainPage"
+            xmlns:i18n="clr-namespace:DearManager;assembly=DearManager">
+    <!--Pages can be added as references or inline-->
+    <local:ProfilePage Title="{i18n:Translate txtMainProfile}">
+        <local:ProfilePage.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS" Value="ic_navigation_profile.png" />
+            </OnPlatform>
+        </local:ProfilePage.Icon>
+    </local:ProfilePage>
+    <local:GroupsPage Title="{i18n:Translate txtMainGroup}">
+        <local:GroupsPage.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS" Value="ic_navigation_group.png" />
+            </OnPlatform>
+        </local:GroupsPage.Icon>
+    </local:GroupsPage>
+    <local:FriendsPage Title="{i18n:Translate txtMainFriends}">
+        <local:FriendsPage.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS" Value="ic_navigation_friends.png" />
+            </OnPlatform>
+        </local:FriendsPage.Icon>
+    </local:FriendsPage>
+</TabbedPage>

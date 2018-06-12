@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DearManager.View.ChoiceFriendsPage"
+             xmlns:local="clr-namespace:DearManager.Custom"
+             Title="친구 목록">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="확인" Command="{Binding CAddButtonClick}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  ItemTapped="OnSelectItem"
+                  ItemsSource="{Binding Friends}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:FriendsCell Name="{Binding NickName}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
